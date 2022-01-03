@@ -1,6 +1,3 @@
-<body bgcolor="FF0000"> 
-
-
 ## ʜᴇʏ! 👋
 <bgcolor = "pink">
 I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
@@ -31,8 +28,7 @@ I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
   <img src="https://i.imgur.com/K7N15XS.gif" width="900" height="400" />
   <h2> May the fork be with you -Yoda </h2> 
 </h1>
-  
-</body>
+
 
 
 <!--   links utilizados 
