@@ -1,5 +1,4 @@
 ## ʜᴇʏ! 👋
-<bgcolor = "pink">
 I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 
 <!--- 🧭 Founder at [@th8ta](https://github.com/th8ta) and [@useverto](https://github.com/useverto)
