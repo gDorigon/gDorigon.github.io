@@ -1,9 +1,9 @@
-## ʜᴇʏ! 👋
+<!-- ## ʜᴇʏ! 👋
 I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 
-<!--- 🧭 Founder at [@th8ta](https://github.com/th8ta) and [@useverto](https://github.com/useverto)
+🧭 Founder at [@th8ta](https://github.com/th8ta) and [@useverto](https://github.com/useverto) // comentar
 
-- 👥 Core team member at [@nestdotland](https://github.com/nestdotland) -->
+- 👥 Core team member at [@nestdotland](https://github.com/nestdotland) 
 
 ## About me
 - 🖥 lol, r6 and csgo player
@@ -30,7 +30,7 @@ I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 
 
 
-<!--   links utilizados 
+   links utilizados 
 https://dev.to/envoy_/150-badges-for-github-pnk
 https://github.com/alexandresanlim/Badges4-README.md-Profile#-games-
 https://github.com/abhisheknaiidu/awesome-github-profile-readme#dynamic-realtime-
@@ -42,3 +42,5 @@ https://i.imgur.com/l1kAqDN.gif
 
 
 -->
+
+
