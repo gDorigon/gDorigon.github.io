@@ -34,5 +34,6 @@ I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 https://dev.to/envoy_/150-badges-for-github-pnk
 https://github.com/alexandresanlim/Badges4-README.md-Profile#-games-
 https://github.com/abhisheknaiidu/awesome-github-profile-readme#dynamic-realtime-
+https://github.com/techytushar/techytushar
 
 -->
