@@ -1,8 +1,3 @@
-VO MORRE
-
-<img src="https://pa1.narvii.com/6434/f1e569a4b874b1a520fbf6609844c0798a59895c_hq.gif" width="900" height="400" />
-
-
 <!-- ## ʜᴇʏ! 👋
 I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 
