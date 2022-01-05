@@ -9,8 +9,7 @@ I'm Guilherme, a 17 years old developer from Brazil🇧🇷.
 - 📊 Dogecoin fan
 - 💽 Hip-hop lover
 
-<!--## Stats 
-![gDorigon](https://github-readme-stats.vercel.app/api?username=gdorigon&show_icons=true&theme=tokyonight) -->
+## stats 
 
 <div align="center">
   <a href="https://github.com/gDorigon">
