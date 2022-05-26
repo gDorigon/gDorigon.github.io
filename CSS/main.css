@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #001100;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+
+.nav-itens {
+
+    flex: 1 1 auto;
+    flex-direction: row;
+    display: flex;
+}
+
+#ul-nav {
+    padding-right: 30px;
+    height: 100%;
+    align-items: center;
+    margin-left: auto;
+    display: flex;
+
+}
+
+.nav-link {
+    padding: 15px;
+}
+
+#li-nav {
+    font-family: arial;
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+}
+
+
+body {
+    background-color: black;
+}
+
+
+  
+
+a {
+
+    color: rgba(0, 255, 13, 0.836);
+    text-decoration: none;
+}
+
+
+.fundo1 {
+    opacity: 0.5;
+}
+
+
+.texto-main {
+    font-family: arial;
+    margin-top: 240px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 300px;
+
+}
+
+.texto2 {
+    font-family: arial;
+    margin-top: 280px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 280px;
+
+}
+
+.super-string {
+
+    color: rgb(0, 181, 6);
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(4, 255, 0, 0.068), 0 0 20px rgba(0, 255, 8, 0.183), 0 0 30px #009e25, 0 0 40px #00a91f81, 0 0 50px #00900c, 0 0 60px #005317, 0 0 70px #00c11aa4;
+    }
+
+    to {
+        text-shadow: 0 0 20px rgb(2, 47, 0), 0 0 30px #022700, 0 0 40px #002d12, 0 0 50px #001906, 0 0 60px #00230c, 0 0 70px #005c0e, 0 0 80px #00911d;
+    }
+}
+
+.membro {
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: arial;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row
+    
+
+}
+
+.membro * img {
+    border-radius: 5%;
+}
+
+.membro-dorigas {
+
+    padding: 50px;
+    border: 2px solid #00911d;
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+.membro-carlao {
+    padding: 50px;
+    border: 2px solid #00911d;
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+.membro-caio {
+    padding: 50px;
+    border: 2px solid #00911d;
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+.membro-lucas {
+    padding: 50px;
+    border: 2px solid #00911d;
+    border-radius: 5%;
+    text-align: center;
+
+}
+
+
+.texto-equipe {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: arial;
+    color: white;
+
+}
+
+/*-------------------------------------------------------- */
+
+.card{
+    color: #fff;
+    border: 2px solid #00911d;
+}
+.grid{
+    display: grid;
+}
