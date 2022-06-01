@@ -40,17 +40,20 @@
 
 
             <label class="nome-form" for="fname" placeholder="Seu Nome"> Nome: </label>
-            <input type="text" class="fname" name="fname">
+            <input type="text" class="fname" name="fname"> <br> <br>
 
             <label class="email-form" for="fmail" placeholder="youremail@exemplo.com"> Email: </label>
             <input type="email" class="fmail" name="fmail"> <br> <br>
 
-            <label class="already-usesed-form" for="fname"> Já utilizou algum serviço parecido? </label>
+            <label class="already-usesed-form" for="fname"> Já utilizou algum serviço parecido? </label> <br>
+            <div class="custom-radio">
             <input type="radio" class="fradio" name="option" value="1"> SIM </label>
             <input type="radio" class="fradio" name="option" value="0"> NÃO </label> <br> <br>
+            </div>
 
             <label class="requisitos-form" for="fred"> Qual tipo de serviço você vai precisar? </label> <br>
 
+            <div class="custom-chack-box"> 
             <div id="texto1">
                 <label class="op-form"> Invasão de BD</label>
                 <input type="checkbox">
@@ -70,12 +73,13 @@
                 <label class="op-form"> Clonagem de dados</label>
                 <input type="checkbox"> <br> <br>
             </div>
+            </div>
 
-            <label class="desc-form"> Descrição do serviço: </label> <br>
+            <label class="desc-form"> Descrição do serviço: </label> <br> <br>
             <textarea class="desc-projeto" rows="10" cols="70"
                 placeholder="Utilize essa caixa para descrever o projeto"> </textarea> <br> <br>
 
-            <input type="submit" class="botao-consulta" value="Enviar"> </input>
+            <input id="submit-button" type="submit" class="botao-consulta" value="Enviar"> </input>
 
         </form>
     </center>
