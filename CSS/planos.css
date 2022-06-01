@@ -26,6 +26,7 @@
 }
 
 nav {
+    z-index: 1;
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,6 +38,7 @@ nav {
 
 
 .nav-itens {
+
     flex: 1 1 auto;
     flex-direction: row;
     display: flex;
@@ -62,19 +64,23 @@ nav {
     display: flex;
 }
 
-a {
-
-    color: rgb(0, 255, 13);
-    text-decoration: none;
-}
 
 body {
     background-color: black;
 }
 
+
+  
+
+a {
+
+    color: rgba(0, 255, 13, 0.836);
+    text-decoration: none;
+}
+
 .texto-main {
     font-family: arial;
-    margin-top: 90px;
+    margin-top: 120px;
     font-size: 40px;
     color: white;
     margin-bottom: 40px;
@@ -151,4 +157,3 @@ body {
     text-align: center;
     padding-top: 2rem;
 }
-
