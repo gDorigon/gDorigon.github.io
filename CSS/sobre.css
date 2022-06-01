@@ -4,6 +4,7 @@
 }
 
 nav {
+    z-index: 1;
     position: fixed;
     top: 0;
     width: 100%;
@@ -127,5 +128,12 @@ a {
     width: 34rem;
     height: 34rem;
 
+}
 
+
+.poesia {
+    text-align: center;
+    padding-top: 5rem;
+    font-family: arial;
+    color: rgb(255, 255, 255);
 }
