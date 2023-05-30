@@ -1,106 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <link rel="styleSheet" href="/CSS/main.css">
-    <title> trava_tudo.com </title>
-    <link rel="icon" type="image" href="/IMAGENS/v1.png">
-</head>c
+  <title>Centralizar Botões</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-<nav background="/fundo.gif">
+    .container {
+      text-align: center;
+    }
 
-    <img src="/IMAGENS/v2.png" alt="logo" height="100%" width="60px">
+    .button {
+      margin: 10px;
+    }
 
-
-    <div class="nav-itens">
-
-        <div id="ul-nav">
-            <ul>
-
-                <div id="li-nav">
-                    <li><a class="nav-link" href="HTML/planos.html"> Planos </a></li>
-                    <li><a class="nav-link" href="/HTML/sobre.html"> Sobre </a></li>
-                    <li><a class="nav-link" href="/HTML/contato.html"> Contato </a></li>
-                </div>
-
-            </ul>
-        </div>
-    </div>
-
-</nav>
-
+    .texto{
+        font-family: arial;
+    }
+  </style>
+</head>
 <body>
+  <div class="container">
+    <h1 class="texto">VOCÊ ME AMA?</h1>
+    <button class="button" onclick="alert('TAMBÉM TE AMO AMOR!')">SIM</button>
+    <button class="button2" onclick="esconderBotao()">NÃO</button>
+  </div>
 
-
-    <div class="texto-main">
-        <center>
-            <h3>
-                <b>
-                    Você quer <span class="super-string"> invadir </span> alguma conta <br>
-                    ou quer acessar alguma <span class="super-string"> informação </span> <br>
-                    mas não sabe como fazer isso?
-                </b>
-            </h3>
-        </center>
-
-    </div>
-    <div class="texto2">
-        <center>
-            <h3>
-                Nós temos a solução!
-            </h3>
-        </center>
-    </div>
-
-    <!------------------------------------------------------------------>
-
-    <div class="membro">
-
-        <div class="membro-dorigas">
-            <img src="/IMAGENS/dorigas.jpg" alt="dorigas" width="400px" height="400px">
-            <h4> Dorigas</h4>
-            <h6> Especialista em trava zap</h6>
-        </div>
-
-        <div class="membro-carlao">
-            <img src="/IMAGENS/carlao.jpg" alt="carlos" width="400px" height="400px">
-            <h4> Carlão</h4>
-            <h6> O quebra códigos</h6>
-        </div>
-
-
-        <div class="membro-caio">
-            <img src="/IMAGENS/caio.png" alt="caio" width="400px" height="400px">
-            <h4> Caio</h4>
-            <h6> Invasor de Facebook</h6>
-        </div>
-
-        <div class="membro-lucas">
-            <img src="/IMAGENS/lucas.png" alt="lukinhas" width="400px" height="400px">
-            <h4> Lukinhas </h4>
-            <h6> Gerador de Discord Nitro</h6>
-        </div>
-    </div>
-
-
-    <!-- ------------------------------------------------------------------------------------>
-    <div class="texto-equipe">
-        <center>
-            <h3>
-                Com essa equipe especializada você vai poder contar com um <br> serviço de <span
-                    class="super-string">alto nivel </span> e totalmente <span class="super-string"> irrastreavel
-                </span>.
-            </h3>
-            <br>
-            <h2>
-                Conheça nossos planos clicando <a href="HTML/planos.html"> aqui </a>
-            </h2>
-        </center>
-    </div>
-
-
-
+  <script>
+    function esconderBotao() {
+      var botao = document.querySelector('.button2');
+      botao.style.display = 'none';
+    }
+  </script>
 </body>
-
 </html>
