@@ -142,6 +142,24 @@ html{
   opacity: 1;
 }
 
+/* responsividade */
+
+@media (max-width: 768px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-list a {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .projects img {
+    max-height: none;
+  }
+}
+
 /* FIM PROJECTS */
 
 /* INICIO RODAPE */
