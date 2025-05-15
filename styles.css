@@ -1,0 +1,166 @@
+*{
+  margin:0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth; 
+}
+
+/* INICIO HEADER */
+.nav{
+  background-color: #181818;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top:0;
+  z-index: 9;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 28px;
+}
+
+.nav-list a{
+  text-decoration: none;
+  color: #DDD;
+  padding: 20px;
+}
+
+.nav-list a:hover{
+  color: #FFFFFF;
+}
+/* FIM HEADER */
+
+
+/* INICIO MAIN */
+.main{
+  width: 100%;
+  background-color: #000;
+  height: calc(100vh - 80px);
+  background-image: url("images/programador.png");
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.main h1{
+  color: #FFFFFF;
+  font-size: 54px;
+}
+
+.main p {
+  font-size: 24px;
+  font-style: italic;
+  color: #1e96FC;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.call-to-action{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border:0;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.9s;
+}
+
+.call-to-action:hover{
+  transform: scale(1.1);
+}
+
+.main a{
+  text-decoration: none;
+  color: #181818;
+}
+/* FIM MAIN */
+
+/* INICIO PROJECTS */
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.projects h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.projects p {
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.project-list {
+  width: 100%;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adicionando estilo para os links que contêm as imagens */
+.project-list a {
+  width: 30%;
+  margin: 0 0.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+/* Estilo das imagens continua igual */
+.projects img {
+  width: 100%; /* agora a imagem ocupa 100% do espaço do <a> */
+  height: 100%;
+  opacity: 0.5;
+  transition: 0.9s;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+.projects img:hover {
+  opacity: 1;
+}
+
+/* FIM PROJECTS */
+
+/* INICIO RODAPE */
+footer{
+  width: 100%;
+  background-color: #181818;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+footer p {
+  margin-left: 12px;
+}
+/* FIM RODAPE */

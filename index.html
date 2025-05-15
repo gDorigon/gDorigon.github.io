@@ -2,100 +2,71 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="styleSheet" href="/CSS/main.css">
-    <title> trava_tudo.com </title>
-    <link rel="icon" type="image" href="/IMAGENS/v1.png">
-</head>c
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav background="/fundo.gif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
-    <img src="/IMAGENS/v2.png" alt="logo" height="100%" width="60px">
-
-
-    <div class="nav-itens">
-
-        <div id="ul-nav">
-            <ul>
-
-                <div id="li-nav">
-                    <li><a class="nav-link" href="HTML/planos.html"> Planos </a></li>
-                    <li><a class="nav-link" href="/HTML/sobre.html"> Sobre </a></li>
-                    <li><a class="nav-link" href="/HTML/contato.html"> Contato </a></li>
-                </div>
-
-            </ul>
-        </div>
-    </div>
-
-</nav>
+  <title>Guilherme Dorigon</title>
+</head>
 
 <body>
 
+  <!-- INICIO HEADER -->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#projetos">Projetos</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- FIM HEADER -->
 
-    <div class="texto-main">
-        <center>
-            <h3>
-                <b>
-                    Você quer <span class="super-string"> invadir </span> alguma conta <br>
-                    ou quer acessar alguma <span class="super-string"> informação </span> <br>
-                    mas não sabe como fazer isso?
-                </b>
-            </h3>
-        </center>
-
+  <!-- INICIO MAIN -->
+  <section id="home" class="main">
+    <div>
+      <h1>Guilherme Dorigon</h1>
+      <p>Desenvolvedor front-end</p>
+      <a href="#projetos">
+        <button class="call-to-action">
+          Veja meus projetos 👇
+        </button>
+      </a>
     </div>
-    <div class="texto2">
-        <center>
-            <h3>
-                Nós temos a solução!
-            </h3>
-        </center>
-    </div>
+  </section>
 
-    <div class="membro">
+  <section id="projetos" class="projects">
+    <h2>Meus projetos</h2>
+    <p>Conheça meus últimos projetos</p>
 
-        <div class="membro-dorigas">
-            <img src="/IMAGENS/dorigas.jpg" alt="dorigas" width="400px" height="400px">
-            <h4> Dorigas</h4>
-            <h6> Especialista em trava zap</h6>
-        </div>
-
-        <div class="membro-carlao">
-            <img src="/IMAGENS/carlao.jpg" alt="carlos" width="400px" height="400px">
-            <h4> Carlão</h4>
-            <h6> O quebra códigos</h6>
-        </div>
-
-
-        <div class="membro-caio">
-            <img src="/IMAGENS/caio.png" alt="caio" width="400px" height="400px">
-            <h4> Caio</h4>
-            <h6> Invasor de Facebook</h6>
-        </div>
-
-        <div class="membro-lucas">
-            <img src="/IMAGENS/lucas.png" alt="lukinhas" width="400px" height="400px">
-            <h4> Lukinhas </h4>
-            <h6> Gerador de Discord Nitro</h6>
-        </div>
+    <div class="project-list">
+      <a href="https://github.com/gDorigon/CursoFullstack/tree/main/projeto_criptomoedas" target="_blank">
+        <img src="images/Screenshot_2.png" alt="Foto do projeto 1">
+      </a>
+      <a href="https://github.com/gDorigon/CursoFullstack/tree/main/primeflix" target="_blank">
+        <img src="images/image.png" alt="Foto do projeto 2">
+      </a>
     </div>
 
-    <div class="texto-equipe">
-        <center>
-            <h3>
-                Com essa equipe especializada você vai poder contar com um <br> serviço de <span
-                    class="super-string">alto nivel </span> e totalmente <span class="super-string"> irrastreavel
-                </span>.
-            </h3>
-            <br>
-            <h2>
-                Conheça nossos planos clicando <a href="HTML/planos.html"> aqui </a>
-            </h2>
-        </center>
-    </div>
+  </section>
 
+  <!-- FIM PROJETOS -->
+
+  <!-- INICIO RODAPE -->
+  <footer>
+    <h3>
+      <a href="https://www.linkedin.com/in/guilherme-dorigon-219423203/">Guilherme Dorigon</a>
+    </h3>
+  </footer>
+  <!-- FIM RODAPE -->
 
 </body>
 
-</html> 
+</html>
