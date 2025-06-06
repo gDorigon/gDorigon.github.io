@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8" />
+   <title>Teste prático</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f5f5f5;
+         color: #333;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         height: 100vh;
+         /* Ocupa a altura total da tela */
+         padding-top: 70px;
+         /* Espaço para o header */
+      }
+
+      h1 {
+         color: #0066cc;
+      }
+
+      .input-container {
+         margin-bottom: 20px;
+      }
+
+      label {
+         font-weight: bold;
+      }
+
+      input[type="number"] {
+         width: 300px;
+         padding: 8px;
+      }
+
+      button {
+         padding: 10px 15px;
+         background-color: #0066cc;
+         color: white;
+         border: none;
+         cursor: pointer;
+      }
+
+      button:hover {
+         background-color: #004d99;
+      }
+
+      .result {
+         margin-top: 20px;
+         font-size: 18px;
+         font-weight: bold;
+      }
+
+      .battery-sequence {
+         margin-top: 20px;
+         font-size: 16px;
+         color: #0066cc;
+      }
+
+      .header {
+         background-color: #004d99;
+         padding: 30px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 100;
+      }
+
+      .items-header a {
+         text-decoration: none;
+         color: #FFF;
+         font-size: 22px;
+         font-family: Arial, Helvetica, sans-serif;
+         padding-right: 15px;
+      }
+
+      .box {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         background-color: #e5f7fc;
+         padding: 30px;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         max-width: 450px;
+         width: 100%;
+         margin: 10% auto;
+
+      }
+   </style>
+</head>
+
+<header class="header">
+   <nav class="nav-header">
+      <div class="items-header">
+         <a href="https://www.linkedin.com/in/guilherme-dorigon-219423203/">Linkedin</a>
+         <a href="https://github.com/gDorigon">Github</a>
+         <a href="https://gdorigon.github.io">Site</a>
+      </div>
+   </nav>
+</header>
+
+<body>
+
+   <div class="box">
+      <h1>Calculadora de bateria</h1>
+
+      <div class="input-container">
+         <label for="event">Evento</label><br>
+         <input type="number" id="event" placeholder="Digite o evento" />
+      </div>
+
+      <button onclick="adicionaBateria()">Adicionar Evento</button>
+
+      <div class="result" id="result"></div>
+      <div class="battery-sequence" id="battery-sequence"></div>
+   </div>
+
+   <script>
+      let bateria = [50];
+
+      function adicionaBateria() {
+         const evento = parseInt(document.getElementById('event').value);
+
+         if (!isNaN(evento)) {
+
+            bateria.push(bateria[bateria.length - 1] + evento);
+
+            if (bateria[bateria.length - 1] > 100) {
+               bateria[bateria.length - 1] = 100;
+               alert("Bateria totalmente carregada")
+            }
+
+            if (bateria[bateria.length - 1] < 0) {
+               bateria[bateria.length - 1] = 0;
+               alert("Bateria totalmente descarregada")
+            }
+
+            document.getElementById('battery-sequence').innerText = `Sequência da bateria: ${bateria.join('%2 -> ')}`;
+            document.getElementById('result').innerText = `Bateria final: ${bateria[bateria.length - 1]}%`;
+            document.getElementById('event').value = '';
+
+            if (bateria[bateria.length - 1] >= 100) {
+               alert("Bateria totalmente carregada")
+            }
+
+            if (bateria[bateria.length - 1] <= 0) {
+               alert("Bateria totalmente descarregada")
+
+            }
+         } else {
+            alert("Por favor, insira um número válido para o evento.");
+         }
+      }
+   </script>
+
+</body>
+
+</html>
