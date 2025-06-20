@@ -5,68 +5,1230 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Guilherme Dorigon | Front-end Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* VARIÁVEIS E RESET */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --secondary: #e11d48;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f1f5f9;
+      --gray: #94a3b8;
+      --accent: #fcd34d;
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 6px;
+    }
 
-  <title>Guilherme Dorigon</title>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--darker);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      position: relative;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-text h1 span {
+      color: var(--primary);
+      display: block;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img-container {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 8px solid rgba(37, 99, 235, 0.2);
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-shape {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .hero-shape-2 {
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background-color: var(--secondary);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      background-color: var(--dark);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--gray);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(37, 99, 235, 0.1);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      background: rgba(37, 99, 235, 0.15);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-text {
+      font-size: 1rem;
+      color: var(--gray);
+    }
+
+    .about-skills {
+      margin-top: 3rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar {
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: progress-shine 2s infinite;
+    }
+
+    @keyframes progress-shine {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      background: linear-gradient(to bottom, var(--darker), #0a0f1f);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(37, 99, 235, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-description {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .service-link:hover {
+      gap: 0.8rem;
+    }
+
+    /* PROJECTS SECTION */
+    .projects {
+      background-color: var(--dark);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .project-img {
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-category {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .project-description {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: linear-gradient(to bottom, #0a0f1f, var(--darker));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(225, 29, 72, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .contact::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-text {
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .contact-details h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-details p {
+      color: var(--gray);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: var(--dark);
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo span {
+      color: var(--primary);
+    }
+
+    .footer-nav {
+      margin: 1.5rem 0;
+    }
+
+    .footer-list {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-link {
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+
+      .hero-content,
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-list {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background-color: var(--dark);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: var(--transition);
+        gap: 1.5rem;
+      }
+
+      .nav-list.active {
+        right: 0;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section {
+        padding: 4rem 0;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      .footer-list {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- INICIO HEADER -->
-  <nav class="nav">
-    <ul class="nav-list">
-      <li>
-        <a href="#home">Home</a>
-      </li>
-      <li>
-        <a href="#projetos">Projetos</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- FIM HEADER -->
-
-  <!-- INICIO MAIN -->
-  <section id="home" class="main">
-    <div>
-      <h1>Guilherme Dorigon</h1>
-      <p>Desenvolvedor front-end</p>
-      <a href="#projetos">
-        <button class="call-to-action">
-          Veja meus projetos 👇
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">Guilherme<span>.</span></a>
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <!-- <li><a href="#about" class="nav-link">Sobre</a></li>
+          <li><a href="#services" class="nav-link">Serviços</a></li> -->
+          <li><a href="#projects" class="nav-link">Projetos</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+        <button class="nav-toggle">
+          <i class="fas fa-bars"></i>
         </button>
-      </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Olá, eu sou <span>Guilherme Dorigon</span></h1>
+          <p>Desenvolvedor Front-end apaixonado por criar interfaces modernas, responsivas e acessíveis.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn">Ver Projetos</a>
+            <a href="#contact" class="btn btn-secondary">Contato</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-img-container">
+            <img src="./images/Screenshot_3.png" alt="Guilherme Dorigon">
+          </div>
+          <div class="hero-shape"></div>
+          <div class="hero-shape-2"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="projetos" class="projects">
-    <h2>Meus projetos</h2>
-    <p>Conheça meus últimos projetos</p>
+  <!-- ABOUT SECTION
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Sobre Mim</h2>
+          <p>Desenvolvedor Front-end com 3+ anos de experiência especializado em criar interfaces de usuário modernas e
+            responsivas. Minha paixão é transformar designs complexos em experiências de usuário fluidas e acessíveis.
+          </p>
+          <p>Acredito que a tecnologia deve ser inclusiva e acessível a todos. Por isso, foco em desenvolver soluções
+            que combinem estética, performance e acessibilidade.</p>
 
-    <div class="project-list">
-      <a href="https://github.com/gDorigon/CursoFullstack/tree/main/projeto_criptomoedas" target="_blank">
-        <img src="images/Screenshot_2.png" alt="Foto do projeto 1">
-      </a>
-      <a href="https://github.com/gDorigon/CursoFullstack/tree/main/primeflix" target="_blank">
-        <img src="images/image.png" alt="Foto do projeto 2">
-      </a>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-number">3+</div>
+              <div class="stat-text">Anos de Experiência</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-text">Projetos Completos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <div class="stat-text">Clientes Satisfeitos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-text">Tecnologias Dominadas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-skills">
+          <h3>Minhas Habilidades</h3>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>HTML5 & CSS3</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>React.js</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>UI/UX Design</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section> -->
 
+  <!-- SERVICES SECTION
+  <section id="services" class="services section">
+    <div class="container">
+      <h2 class="section-title">Meus Serviços</h2>
+      <p class="section-subtitle">Soluções de alta qualidade para suas necessidades digitais</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="service-title">Desenvolvimento Web</h3>
+          <p class="service-description">Criação de websites responsivos e otimizados com as tecnologias mais modernas
+            do mercado.</p>
+          <a href="#" class="service-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="service-title">Aplicações Mobile</h3>
+          <p class="service-description">Desenvolvimento de aplicativos móveis com React Native para iOS e Android.</p>
+          <a href="#" class="service-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-description">Design de interfaces intuitivas e experiências de usuário memoráveis para seus
+            produtos.</p>
+          <a href="#" class="service-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <h2 class="section-title">Projetos Recentes</h2>
+      <p class="section-subtitle">Conheça meus últimos trabalhos e realizações</p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/cripto.png" alt="Projeto Criptomoedas">
+          </div>
+          <div class="project-content">
+            <span class="project-category">Projeto de curso</span>
+            <h3 class="project-title">Dashboard Criptomoedas</h3>
+            <p class="project-description">Plataforma para acompanhamento de cotações em tempo real de criptomoedas</p>
+            <div class="project-links">
+              <a href="https://projeto-criptomoedas-five.vercel.app" target="_blank" class="btn btn-secondary">Ver
+                Projeto</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img
+              src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80"
+              alt="Projeto Streaming">
+          </div>
+          <div class="project-content">
+            <span class="project-category">Em breve</span>
+            <h3 class="project-title">Codando...</h3>
+            <p class="project-description"></p>
+            <div class="project-links">
+              <!-- <a href="https://github.com/gDorigon/CursoFullstack/tree/main/primeflix" target="_blank"
+                class="btn btn-secondary">Ver Projeto</a> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/links.png" alt="Projeto E-commerce">
+          </div>
+          <div class="project-content">
+            <span class="project-category">Painel de links</span>
+            <h3 class="project-title">Projeto Links</h3>
+            <p class="project-description">Um painel para contro de links das suas redes socias, acesso a todas suas
+              redes sociais em apenas 1 lugar.</p>
+            <div class="project-links">
+              <a href="https://projeto-links-git-main-gdorigons-projects.vercel.app" target="_blank"
+                class="btn btn-secondary">Ver
+                Projeto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FIM PROJETOS -->
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2 class="section-title">Vamos conversar!</h2>
+          <p class="contact-text">Estou disponível para projetos freelance e oportunidades de trabalho. Entre em contato
+            e vamos transformar suas ideias em realidade.</p>
 
-  <!-- INICIO RODAPE -->
-  <footer>
-    <h3>
-      <a href="https://www.linkedin.com/in/guilherme-dorigon-219423203/">Guilherme Dorigon</a>
-    </h3>
+          <div class="contact-methods">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>guidbovo@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Localização</h4>
+                <p>Londrina, Paraná - Brasil </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Telefone</h4>
+                <p>+55 (43) 99668-2521</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/guilherme-dorigon-219423203/" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/gDorigon" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <!-- <a href="https://twitter.com" target="_blank" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a> -->
+            <a href="https://www.instagram.com/gui_dorigon/" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO FUNCIONAL COM FORMSPREE -->
+        <div class="contact-form">
+          <form id="contactForm" action="https://formspree.io/f/xkgbvvoq" method="POST">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="_replyto" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Assunto</label>
+              <input type="text" id="subject" name="_subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <!-- evita recarregar a página pro Formspree -->
+            <input type="hidden" name="_captcha" value="false" />
+            <button type="submit" class="btn" id="submitBtn">
+              <span id="submitText">Enviar Mensagem</span>
+              <i id="submitLoader" class="fas fa-spinner fa-spin" style="display: none;"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Guilherme<span>.</span></div>
+        <nav class="footer-nav">
+          <ul class="footer-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <!-- <li><a href="#about" class="footer-link">Sobre</a></li>
+            <li><a href="#services" class="footer-link">Serviços</a></li> -->
+            <li><a href="#projects" class="footer-link">Projetos</a></li>
+            <li><a href="#contact" class="footer-link">Contato</a></li>
+          </ul>
+        </nav>
+        <p class="copyright">© 2025 Guilherme Dorigon. Todos os direitos reservados.</p>
+      </div>
+    </div>
   </footer>
-  <!-- FIM RODAPE -->
 
+  <script>
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+      });
+    });
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitLoader = document.getElementById('submitLoader');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      // feedback visual
+      submitBtn.disabled = true;
+      submitLoader.style.display = 'inline-block';
+
+      const formData = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        const json = await res.json();
+        if (res.ok) {
+          alert('✅ Mensagem enviada com sucesso!');
+          form.reset();
+        } else {
+          alert(json.error || '❌ Erro ao enviar. Tente novamente.');
+        }
+      } catch (err) {
+        alert('❌ Falha de conexão. Tente mais tarde.');
+      } finally {
+        submitBtn.disabled = false;
+        submitLoader.style.display = 'none';
+      }
+    });
+
+    // Add smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.service-card, .project-card, .stat-card');
+
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    // Set initial state for animation
+    document.querySelectorAll('.service-card, .project-card, .stat-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Trigger animations on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
 </body>
 
 </html>
