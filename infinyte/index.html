@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inifynte - Soluções Digitais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background-color: #000000;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #000000;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -3px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        #about {
+            padding: 8rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .solution-card {
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 8rem 4rem;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-container h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-container p {
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #999;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            #about,
+            #contact {
+                padding: 4rem 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <div class="logo-icon">I</div>
+            <span>INFINYTE</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Soluções</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up" data-aos-duration="1000">
+                Transformando ideias <br>em realidade
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                Soluções inovadoras e tecnológicas de ponta para impulsionar seu negócio no mundo digital
+            </p>
+            <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                Fale Conosco
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+                <h2>Nossas Soluções</h2>
+                <p>
+                    Na Inifynte, acreditamos que tecnologia e criatividade andam juntas.
+                    Desenvolvemos soluções digitais personalizadas que conectam sua marca
+                    ao futuro.
+                </p>
+                <p>
+                    Nossa missão é transformar desafios em oportunidades através de
+                    estratégias digitais inteligentes e design excepcional.
+                </p>
+            </div>
+            <div class="solutions-grid" data-aos="fade-left" data-aos-duration="1000">
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Sites e aplicações web modernas, responsivas e otimizadas para performance máxima.</p>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Design Digital</h3>
+                    <p>Interfaces intuitivas e experiências visuais marcantes que encantam usuários.</p>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Consultoria Tech</h3>
+                    <p>Estratégias digitais personalizadas para acelerar o crescimento do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2 data-aos="fade-up" data-aos-duration="1000">
+                Vamos conversar?
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                Entre em contato e descubra como podemos transformar suas ideias em realidade
+            </p>
+            <div class="contact-info">
+                <!-- <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Email</h4>
+                    <a href="mailto:contato@inifynte.com">contato@inifynte.com</a>
+                </div> -->
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Telefone</h4>
+                    <a href="https://wa.me/5543996682521">+55 (43) 99668-2521</a>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                    <h4>Localização</h4>
+                    <p>Londrina - PR, Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.31.1/tsparticles.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 1000
+        });
+
+        // Particles
+        tsParticles.load("particles-js", {
+            fps_limit: 60,
+            interactivity: {
+                detectsOn: "canvas",
+                events: {
+                    onClick: { enable: true, mode: "push" },
+                    onHover: { enable: true, mode: "repulse" },
+                    resize: true
+                },
+                modes: {
+                    push: { particles_nb: 4 },
+                    repulse: { distance: 100, duration: 0.4 }
+                }
+            },
+            particles: {
+                color: { value: "#000000" },
+                links: {
+                    color: "#000000",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    bounce: false,
+                    direction: "none",
+                    enable: true,
+                    outMode: "out",
+                    random: false,
+                    speed: 1,
+                    straight: false
+                },
+                number: {
+                    density: { enable: true, area: 800 },
+                    value: 80
+                },
+                opacity: { value: 0.3 },
+                shape: { type: "circle" },
+                size: {
+                    random: true,
+                    value: 2
+                }
+            },
+            detectRetina: true
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
