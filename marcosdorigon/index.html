@@ -1,275 +1,483 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcos Dorigon | Personal Trainer</title>
+    <link rel="icon" href="assets/logoW.png" type="image/png" />
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-banner">
+      <p>
+        Aproveite nossas ofertas de lançamento e comece a destravar seu corpo
+        hoje mesmo!
+      </p>
+    </div>
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Marcos Dorigon - Personal Trainer</title>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-   <link href="./style.css" rel="stylesheet">
-</head>
+    <header class="hero">
+      <div class="container hero-wrapper">
+        <div class="hero-content">
+          <!-- Mobile Image inserted here -->
+          <div class="hero-image-mobile">
+            <img
+              src="assets/logoW.png"
+              alt="Marcos Dorigon"
+              class="hero-image"
+            />
+          </div>
 
-<body>
-   <!-- Header -->
-   <header class="header">
+          <h1>
+            Destrave seu corpo, reduza dores e volte a se movimentar com mais
+            confiança e autonomia,
+            <span class="text-accent">praticando poucos minutos por dia</span>
+          </h1>
+          <p class="subtitle">
+            um método prático com explicações e videos aplicáveis em sua casa ou
+            na academia sem equipamentos. Método criado por Marcos Dorigon,
+            Personal Trainer, para pessoas que querem se mover melhor e sem
+            depender de fioterapida, remédio ou academias.
+          </p>
+
+          <div class="cta-container-left">
+            <a href="#oferta" class="btn-main pulse"
+              >QUERO DESTRAVAR MEU CORPO</a
+            >
+          </div>
+        </div>
+        <div class="hero-image-area desktop-only">
+          <img src="assets/logoW.png" alt="Marcos Dorigon" class="hero-image" />
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
       <div class="container">
-         <nav class="nav-container">
-            <div class="logo">MARCOS DORIGON</div>
-            <ul class="nav-menu">
-               <li><a href="#home">Início</a></li>
-               <li><a href="#about">Sobre</a></li>
-               <li><a href="#history">Histórico</a></li>
-               <li><a href="#plans">Planos</a></li>
-               <li><a href="#contact">Contato</a></li>
+        <h2>Quem é <span class="text-accent">Marcos Dorigon</span>?</h2>
+
+        <div class="about-toggle-container">
+          <button id="aboutToggleBtn" class="btn-main">
+            Conheça minha história <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div
+          id="aboutContent"
+          class="about-wrapper"
+          style="display: none; margin-top: 40px"
+        >
+          <div class="about-text-container">
+            <div class="about-image-container desktop-only">
+              <img
+                src="assets/profile.jpg"
+                alt="Marcos Dorigon"
+                class="about-profile-img"
+              />
+            </div>
+            <p>
+              Meu nome é <strong>Marcos Dorigon</strong>, sou Personal Trainer e
+              ex-atleta de Taekwondo. Foram mais de 10 anos vivendo o esporte de
+              forma intensa, tanto como atleta quanto como profissional dedicado
+              ao estudo e à prática do treinamento físico — sempre com o
+              objetivo de melhorar a qualidade de vida e a performance das
+              pessoas.
+            </p>
+            <p>
+              Ao longo da minha trajetória, experimentei os dois lados do
+              treino: o alto rendimento e a realidade de quem busca qualidade de
+              vida, como menos dor, mais disposição e um corpo que funcione
+              melhor no dia a dia. Foi essa vivência real, dentro e fora das
+              competições, que me levou a desenvolver uma metodologia própria,
+              focada em movimento de qualidade, força e mobilidade.
+            </p>
+
+            <p class="highlight-text-small">
+              Sou formado e estou em constante atualização, com cursos e
+              especializações nas áreas de:
+            </p>
+            <ul class="about-list">
+              <li><i class="fas fa-check"></i> Treinamento de força</li>
+              <li><i class="fas fa-check"></i> Performance esportiva</li>
+              <li><i class="fas fa-check"></i> Mobilidade e movimento</li>
+              <li>
+                <i class="fas fa-check"></i> Relação entre dor, compensações e
+                articulações
+              </li>
             </ul>
-            <div class="mobile-menu">
-               <span></span>
-               <span></span>
-               <span></span>
-            </div>
-         </nav>
-      </div>
-   </header>
 
-   <!-- Hero Section -->
-   <section id="home" class="hero">
+            <p>
+              Hoje, atuo como Personal Trainer e consultor online, aplicando um
+              treinamento funcional voltado para saúde e performance, sempre
+              respeitando a individualidade de cada corpo. Não importa se você é
+              atleta ou se apenas quer voltar a se movimentar sem dor, com
+              segurança e confiança.
+            </p>
+
+            <div class="mission-box">
+              <p>
+                <strong>Meu objetivo é simples:</strong><br />
+                te ajudar a construir um corpo forte, móvel e resistente, capaz
+                de sustentar sua rotina, seus treinos e sua vida por muitos
+                anos.
+              </p>
+            </div>
+
+            <p>
+              Não acredito em soluções milagrosas. Acredito em
+              <strong>processo, constância e inteligência no treino.</strong>
+            </p>
+
+            <p class="final-message">
+              E é exatamente isso que você vai encontrar no meu e-book e na
+              minha consultoria. 💪
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("aboutToggleBtn")
+        .addEventListener("click", function () {
+          var content = document.getElementById("aboutContent");
+          var icon = this.querySelector("i");
+
+          if (content.style.display === "none") {
+            content.style.display = "flex";
+            this.innerHTML = 'Fechar <i class="fas fa-chevron-up"></i>';
+          } else {
+            content.style.display = "none";
+            this.innerHTML =
+              'Conheça minha história <i class="fas fa-chevron-down"></i>';
+          }
+        });
+    </script>
+
+    <section class="features">
       <div class="container">
-         <div class="hero-content">
-            <div class="hero-text">
-               <h1>SUPERE SEUS LIMITES</h1>
-               <p class="tagline">Personal Trainer</p>
-               <p>Transforme seu corpo e mente com treinamento funcional personalizado. Desenvolva suas habilidades
-                  físicas com periodização específica e atendimento exclusivo.</p>
-               <div class="cta-buttons">
-                  <a href="#plans" class="btn btn-primary">Ver Planos</a>
-                  <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
-               </div>
-            </div>
-            <div class="hero-image">
-               <img src="./assets/marcos_frente.jpeg" alt="Marcos Dorigon - Personal Trainer">
-            </div>
-         </div>
+        <h2>Para quem é este E-book:</h2>
+        <div class="grid-features">
+          <div class="card">
+            <h3>Para quem treina</h3>
+            <p>
+              Melhore sua amplitude, evite lesões e potenciaize seus resultados
+              na musculação ou esportes.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Para o dia a dia</h3>
+            <p>
+              Ideal para quem sente o corpo "travado", dores nas costas e
+              rigidez após longas horas de trabalho.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Rápido e Eficiente</h3>
+            <p>
+              Metodologia funcional que cabe na rotina, com sessões curtas e
+              aplicáveis em qualquer lugar.
+            </p>
+          </div>
+        </div>
       </div>
-   </section>
+    </section>
 
-   <!-- About Section -->
-   <section id="about" class="about">
+    <!-- Comparison Section -->
+    <section class="comparison-section">
       <div class="container">
-         <h2 class="section-title fade-in">Sobre Mim</h2>
-         <div class="about-content">
-            <div class="about-text fade-in">
-               <p>Sou Marcos Dorigon, personal trainer especializado em treinamento físico funcional. Minha missão é
-                  ajudar você a alcançar seus objetivos através de um trabalho personalizado e eficiente.</p>
-               <p>Trabalho com metodologia única, oferecendo aula experimental avaliativa, anamnese completa e aulas
-                  individuais, em dupla ou semi-presencial. Cada treino é planejado de forma individual com atendimento
-                  totalmente personalizado.</p>
-               <p>Utilizo periodização específica para desenvolver suas habilidades físicas, garantindo resultados
-                  consistentes e duradouros. Meu foco é não apenas transformar seu corpo, mas também fortalecer sua
-                  mente.</p>
-            </div>
-            <div class="about-image fade-in">
-               <img src="./assets/logo.png" alt="Marcos Dorigon"
-                  style="width: 100%; max-width: 400px; border-radius: 20px;">
-            </div>
-         </div>
-      </div>
-   </section>
+        <h2>
+          Corpo <span class="text-red">Travado</span> vs
+          <span class="text-accent">Livre</span>
+        </h2>
+        <p class="section-subtitle">
+          A diferença entre viver com limitações e ter liberdade de movimento
+        </p>
 
-   <!-- History Section -->
-   <section id="history" class="history">
+        <div class="comparison-grid">
+          <!-- Row 1 -->
+          <div class="comp-box bad">
+            <div class="comp-content">
+              <div class="icon-box"><i class="fas fa-ban"></i></div>
+              <div>
+                <span class="label-bad">SEM MOBILIDADE</span>
+                <h4>Dores e Rigidez constante</h4>
+              </div>
+              <i class="fas fa-times-circle status-icon bad"></i>
+            </div>
+          </div>
+          <div class="comp-box good">
+            <div class="comp-content">
+              <div class="icon-box"><i class="fas fa-running"></i></div>
+              <div>
+                <span class="label-good">MÉTODO DORIGON</span>
+                <h4>Corpo solto e sem dores</h4>
+              </div>
+              <i class="fas fa-check-circle status-icon good"></i>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="comp-box bad">
+            <div class="comp-content">
+              <div class="icon-box">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div>
+                <span class="label-bad">SEM MOBILIDADE</span>
+                <h4>Alto risco de lesão no treino</h4>
+              </div>
+              <i class="fas fa-times-circle status-icon bad"></i>
+            </div>
+          </div>
+          <div class="comp-box good">
+            <div class="comp-content">
+              <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
+              <div>
+                <span class="label-good">MÉTODO DORIGON</span>
+                <h4>Performance e segurança</h4>
+              </div>
+              <i class="fas fa-check-circle status-icon good"></i>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="comp-box bad">
+            <div class="comp-content">
+              <div class="icon-box"><i class="fas fa-battery-quarter"></i></div>
+              <div>
+                <span class="label-bad">SEM MOBILIDADE</span>
+                <h4>Movimentos limitados</h4>
+              </div>
+              <i class="fas fa-times-circle status-icon bad"></i>
+            </div>
+          </div>
+          <div class="comp-box good">
+            <div class="comp-content">
+              <div class="icon-box"><i class="fas fa-battery-full"></i></div>
+              <div>
+                <span class="label-good">MÉTODO DORIGON</span>
+                <h4>Longevidade e saúde articular</h4>
+              </div>
+              <i class="fas fa-check-circle status-icon good"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-container" style="margin-top: 40px">
+          <a href="#oferta" class="btn-main pulse"
+            >Quero liberdade de movimento</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="preview-section">
       <div class="container">
-         <h2 class="section-title fade-in">Minha Trajetória</h2>
-         <div class="timeline">
-            <div class="timeline-item fade-in">
-               <div class="timeline-content">
-                  <h3>Início da Carreira Atlética</h3>
-                  <p>Comecei minha jornada no esporte ainda jovem, desenvolvendo paixão pelo movimento e performance
-                     física.</p>
-               </div>
-            </div>
-            <div class="timeline-item fade-in">
-               <div class="timeline-content">
-                  <h3>Formação Profissional</h3>
-                  <p>Graduação em Educação Física e especializações em treinamento funcional e preparação física.</p>
-               </div>
-            </div>
-            <div class="timeline-item fade-in">
-               <div class="timeline-content">
-                  <h3>Certificações Especializadas</h3>
-                  <p>Múltiplas certificações em metodologias avançadas de treinamento e recuperação muscular.</p>
-               </div>
-            </div>
-            <div class="timeline-item fade-in">
-               <div class="timeline-content">
-                  <h3>Personal Trainer Profissional</h3>
-                  <p>Estabelecimento da carreira como personal trainer, focando em resultados personalizados e
-                     sustentáveis.</p>
-               </div>
-            </div>
-         </div>
+        <h2 style="margin-bottom: 30px">O que você vai aprender</h2>
+        <div class="preview-grid">
+          <div class="preview-item">
+            Exercícios exclusivos de mobilidade articular
+          </div>
+          <div class="preview-item">Protocolos de 10 e 20 minutos</div>
+          <div class="preview-item">
+            Como montar sua própria rotina de mobilidade
+          </div>
+          <div class="preview-item">
+            Como utilizar a mobilidade antes do treino principal.
+          </div>
+        </div>
+        <div class="cta-center">
+          <div
+            class="btn-main"
+            style="
+              width: 100%;
+              max-width: 500px;
+              margin: 20px auto;
+              pointer-events: none;
+            "
+          >
+            Conteúdo Prático e Direto
+          </div>
+        </div>
       </div>
-   </section>
+    </section>
 
-   <!-- Plans Section -->
-   <section id="plans" class="plans">
+    <!-- Bonuses Section -->
+    <section class="bonuses-section">
       <div class="container">
-         <h2 class="section-title fade-in">Escolha Seu Plano</h2>
-         <p style="text-align: center; margin-bottom: 3rem; opacity: 0.9;">4 maneiras para aumentar sua performance e
-            elevar o nível do seu treinamento</p>
+        <h2>Bônus <span class="text-accent">Exclusivos</span></h2>
+        <p class="section-subtitle">
+          Acelere seus resultados com esses materiais complementares
+        </p>
+        <div class="bonus-badge">Avaliação Bônus Inclusa</div>
 
-         <div class="plan-selector">
-            <button class="plan-btn active" data-plan="individual">Individual</button>
-            <button class="plan-btn" data-plan="dupla">Dupla</button>
-            <button class="plan-btn" data-plan="semi">Semi-presencial</button>
-            <button class="plan-btn" data-plan="recovery">Recovery</button>
-         </div>
+        <div class="bonuses-grid">
+          <div class="bonus-card">
+            <p class="bonus-desc">
+              Guia de execuções corretas para não errar no movimento.
+            </p>
+            <ul class="check-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Passo a passo detalhado
+              </li>
+              <li><i class="fas fa-check-circle"></i> Video do exercicio</li>
+            </ul>
+          </div>
 
-         <!-- Individual Plans -->
-         <div class="plan-content active" id="individual">
-            <div class="plan-grid">
-               <div class="plan-card">
-                  <h3 class="plan-title">PLANO SILVER</h3>
-                  <div class="plan-price">R$ 720</div>
-                  <ul class="plan-features">
-                     <li>8 treinos ao mês</li>
-                     <li>2x na semana</li>
-                     <li>Acompanhamento personalizado</li>
-                     <li>Avaliação física</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Individual%20Silver"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-               <div class="plan-card featured">
-                  <h3 class="plan-title">PLANO GOLD</h3>
-                  <div class="plan-price">R$ 1.080</div>
-                  <ul class="plan-features">
-                     <li>12 treinos ao mês</li>
-                     <li>3x na semana</li>
-                     <li>Acompanhamento personalizado</li>
-                     <li>Avaliação física</li>
-                     <li>Periodização específica</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Individual%20Gold"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-               <div class="plan-card">
-                  <h3 class="plan-title">PLANO DIAMOND</h3>
-                  <div class="plan-price">R$ 1.800</div>
-                  <ul class="plan-features">
-                     <li>20 treinos ao mês</li>
-                     <li>5x na semana</li>
-                     <li>Acompanhamento total</li>
-                     <li>Avaliação física completa</li>
-                     <li>Periodização específica</li>
-                     <li>Suporte nutricional</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Individual%20Diamond"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-            </div>
-         </div>
+          <div class="bonus-card">
+            <p class="bonus-desc">
+              Suporte para dúvidas sobre a aplicação dos exercícios.
+            </p>
+            <ul class="check-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Tire dúvidas direto comigo
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Adaptações para seu nível
+              </li>
+            </ul>
+          </div>
 
-         <!-- Dupla Plans -->
-         <div class="plan-content" id="dupla">
-            <div class="plan-grid">
-               <div class="plan-card">
-                  <h3 class="plan-title">DUPLA SILVER</h3>
-                  <div class="plan-price">R$ 1.040</div>
-                  <ul class="plan-features">
-                     <li>8 treinos ao mês</li>
-                     <li>2x na semana</li>
-                     <li>Treino em dupla</li>
-                     <li>Avaliação física</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Dupla%20Silver"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-               <div class="plan-card">
-                  <h3 class="plan-title">DUPLA GOLD</h3>
-                  <div class="plan-price">R$ 1.560</div>
-                  <ul class="plan-features">
-                     <li>12 treinos ao mês</li>
-                     <li>3x na semana</li>
-                     <li>Treino em dupla</li>
-                     <li>Avaliação física</li>
-                     <li>Periodização específica</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Dupla%20Gold"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-            </div>
-         </div>
-
-         <!-- Semi-presencial Plans -->
-         <div class="plan-content" id="semi">
-            <div class="plan-grid">
-               <div class="plan-card" style="max-width: 400px; margin: 0 auto;">
-                  <h3 class="plan-title">SEMI-PRESENCIAL</h3>
-                  <div class="plan-price">R$ 289,90</div>
-                  <ul class="plan-features">
-                     <li>Planilha personalizada mensal</li>
-                     <li>Acompanhamento online constante</li>
-                     <li>1 aula exclusiva por mês</li>
-                     <li>Suporte via WhatsApp</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Semi-Presencial"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-            </div>
-         </div>
-
-         <!-- Recovery Plans -->
-         <div class="plan-content" id="recovery">
-            <div class="plan-grid">
-               <div class="plan-card" style="max-width: 400px; margin: 0 auto;">
-                  <h3 class="plan-title">PLANO RECOVERY</h3>
-                  <div class="plan-price">R$ 239,90</div>
-                  <ul class="plan-features">
-                     <li>2 sessões focadas no bem-estar</li>
-                     <li>Liberação miofascial</li>
-                     <li>Ventosaterapia</li>
-                     <li>Recuperação muscular</li>
-                     <li>Alívio de dores</li>
-                  </ul>
-                  <a href="https://wa.me/55554391479297?text=Ol%C3%A1%20Marcos%2C%20tenho%20interesse%20no%20plano%20Recovery"
-                     class="btn btn-primary">Entrar em contato</a>
-               </div>
-            </div>
-         </div>
+          <!-- <div class="bonus-card">
+            <p class="bonus-desc">
+              Acesso à comunidade de alunos focados em saúde e performance.
+            </p>
+            <ul class="check-list">
+              <li><i class="fas fa-check-circle"></i> Troca de experiências</li>
+              <li><i class="fas fa-check-circle"></i> Motivação diária</li>
+            </ul>
+          </div> -->
+        </div>
       </div>
-   </section>
+    </section>
 
-   <!-- Contact Section -->
-   <section id="contact" class="contact">
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="oferta">
       <div class="container">
-         <h2 class="section-title fade-in">Entre em Contato</h2>
-         <p style="margin-bottom: 2rem; opacity: 0.9;">Pronto para transformar sua vida? Entre em contato e comece sua
-            jornada hoje!</p>
-         <div class="social-links">
-            <a href="https://www.instagram.com/dorigoon_/" class="social-link" title="Instagram">
-               <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/55554391479297" class="social-link" title="WhatsApp">
-               <i class="fab fa-whatsapp"></i>
-            </a>
-            <!-- <a href="#" class="social-link" title="Facebook">
-               <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="social-link" title="Email">
-               <i class="fas fa-envelope"></i>
-            </a> -->
-         </div>
+        <h2>
+          Invista na sua saúde de forma eficiente e rápida para seu dia a dia
+        </h2>
+        <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+
+        <div class="pricing-grid">
+          <!-- Card 1 - E-book -->
+          <div class="pricing-card">
+            <div class="best-offer-tag">OFERTA ESPECIAL</div>
+            <div class="card-content">
+              <div class="logo-area">
+                <h3>
+                  E-BOOK <br />
+                  <span class="text-accent">MOBILIDADE</span> 📚
+                </h3>
+              </div>
+              <h4>Manual Completo + Bônus</h4>
+
+              <ul class="pricing-list">
+                <li>
+                  <span>Exercícios exclusivos </span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span>Protocolos de treinos eficientes </span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span
+                    >Orientação dos exercícios de forma prática e
+                    eficiente</span
+                  >
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span>Acesso Vitalício</span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="price-bottom">
+              <div class="price-block">
+                <div class="old-price">
+                  De <span class="strike">R$99,90</span>
+                </div>
+                <div class="big-price text-accent">R$69,00</div>
+                <p
+                  class="installments"
+                  style="color: #fff; font-weight: bold; margin-bottom: 5px"
+                >
+                  em até 12x
+                </p>
+                <p class="installments">Pagamento único e seguro</p>
+              </div>
+
+              <a href="#" class="btn-main full-width">Quero comprar agora</a>
+              <div class="secure">
+                <i class="fas fa-shield-alt"></i> Garantia de 7 dias
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 - Consultoria -->
+          <div class="pricing-card featured">
+            <div class="best-offer-tag">MAIS VENDIDO</div>
+            <div class="card-content">
+              <div class="logo-area">
+                <h3>
+                  CONSULTORIA <br />
+                  <span class="text-white">PERSONALIZADA</span> 🏋️‍♂️
+                </h3>
+              </div>
+              <h4>Treino 100% Personalizado</h4>
+
+              <ul class="pricing-list">
+                <li>
+                  <span>Planilha mensal Individualizada.</span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span>Acompanhamento On-line contínuo</span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span>Suporte direto comigo</span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+                <li>
+                  <span>Metas específicas</span>
+                  <i class="fas fa-check text-accent"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="price-bottom">
+              <div class="price-block">
+                <div class="big-price text-accent">R$300,00</div>
+                <p class="installments">Mensal</p>
+              </div>
+
+              <a
+                href="https://wa.me/5548999999999?text=Quero%20consultoria"
+                class="btn-main full-width"
+                >Quero consultoria personalizada</a
+              >
+              <div class="secure">
+                <i class="fas fa-shield-alt"></i> Garantia de 15 dias
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-   </section>
-
-   <!-- Footer -->
-   <footer class="footer">
-      <div class="container">
-         <p>&copy; 2025 Marcos Dorigon - Personal Trainer. Todos os direitos reservados.</p>
-      </div>
-   </footer>
-
-   <script src="script.js"></script>
-</body>
-
+    </section>
+  </body>
 </html>
