@@ -672,6 +672,8 @@ body {
 @media (max-width: 900px) {
   .hero {
     padding-top: 100px; /* Reduced from 280px */
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .container {
