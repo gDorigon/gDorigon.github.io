@@ -42,7 +42,7 @@ body {
 
 /* Hero Section */
 .hero {
-  padding: 280px 0 80px 0;
+  padding: 200px 0 80px 0;
   background: linear-gradient(180deg, #030333 0%, #0a0a33 100%);
   position: relative;
   overflow: hidden;
@@ -254,7 +254,9 @@ body {
   font-weight: bold;
   border-radius: 10px;
   font-size: 1.2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   box-shadow: 0 4px 15px rgba(55, 91, 181, 0.4);
   border: none;
   cursor: pointer;
@@ -283,7 +285,9 @@ body {
   padding: 30px;
   border-radius: 15px;
   border: 1px solid var(--border-color);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .card:hover {
