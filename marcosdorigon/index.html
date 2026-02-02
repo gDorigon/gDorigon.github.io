@@ -90,6 +90,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "888890150786149");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=888890150786149&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <div class="top-banner">
@@ -560,5 +597,45 @@
         </div>
       </div>
     </section>
+
+    <!-- Meta Pixel Events Script -->
+    <script>
+      // Rastrear cliques no botão de compra do E-book
+      document
+        .querySelector('a[href="https://pay.kiwify.com.br/xjy5bNC"]')
+        .addEventListener("click", function () {
+          fbq("track", "InitiateCheckout", {
+            content_name: "E-book Mobilidade",
+            content_category: "E-book",
+            value: 69.0,
+            currency: "BRL",
+          });
+        });
+
+      // Rastrear cliques no botão de consultoria
+      document
+        .querySelector(
+          'a[href*="wa.me/5543991479297?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20consultoria"]',
+        )
+        .addEventListener("click", function () {
+          fbq("track", "Lead", {
+            content_name: "Consultoria Personalizada",
+            content_category: "Consultoria",
+            value: 300.0,
+            currency: "BRL",
+          });
+        });
+
+      // Rastrear todos os CTAs que levam para a seção de oferta
+      document.querySelectorAll('a[href="#oferta"]').forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          fbq("track", "ViewContent", {
+            content_name: "Seção de Ofertas",
+            content_category: "CTA",
+          });
+        });
+      });
+    </script>
+    <!-- End Meta Pixel Events Script -->
   </body>
 </html>
